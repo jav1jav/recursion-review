@@ -29,6 +29,9 @@ var stringifyJSON = function(obj) {
     // return everything inside stringified
     var str = ''; 
     for (var key in obj) {
+      if (obj[key] === undefined || typeof obj[key] === 'function') {
+        continue;
+      }
       str = str + stringifyJSON(key) + ':';
       str = str + stringifyJSON(obj[key]) + ',';
     }
