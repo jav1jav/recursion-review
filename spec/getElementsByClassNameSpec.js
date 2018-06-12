@@ -6,6 +6,7 @@ var htmlStrings = [
   '<div><div></div><div><div class="targetClassName"></div></div></div>',
   '<div><div class="targetClassName"></div><div class="targetClassName"></div></div>',
   '<div><div class="somediv"><div class="innerdiv"><span class="targetClassName">yay</span></div></div></div>'
+
 ];
 
 describe('getElementsByClassName', function() {
@@ -20,7 +21,8 @@ describe('getElementsByClassName', function() {
       var expectedNodeList = document.getElementsByClassName('targetClassName');
       var expectedArray = Array.prototype.slice.apply(expectedNodeList);
       var equality = _.isEqual(result, expectedArray); // why can't we use `===` here?
-      expect(equality).to.equal(FILL_ME_IN);
+
+      expect(equality).to.equal(true);
 
       $rootElement.remove();
     });
